@@ -61,4 +61,12 @@ public class PasswordUtilsTest {
         int actual = PasswordUtils.countSpecialCharacters(password);
         assertEquals(3, actual);
     }
+
+    @Test 
+    void testSufficientSpecialCharactersExactlyMinimum() {
+        String password = "p@ss!w0rd";
+        int minimum = 2; 
+        boolean actual = PasswordUtils.hasSufficientSpecialCharacters(password, minimum);
+        assertEquals(true, actual);
+    }
 }
