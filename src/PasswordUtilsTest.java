@@ -47,18 +47,18 @@ public class PasswordUtilsTest {
     void testSpecialCharacterCountWithEmptyString() {
         String password = "";
         int actual = PasswordUtils.countSpecialCharacters(password);
-        assertEquals(0, password);
+        assertEquals(0, actual);
     }
     @Test
     void testSpecialCharacterCountWithAllSpecialKey() {
         String password = "!@%!@%";
         int actual = PasswordUtils.countSpecialCharacters(password);
-        assertEquals(6, password);
+        assertEquals(6, actual);
     }
     @Test
     void testSpecialCharacterCountWithSpace() {
         String password = "   123123";
         int actual = PasswordUtils.countSpecialCharacters(password);
-        assertEquals(3, password);
+        assertEquals(3, actual);
     }
 }
