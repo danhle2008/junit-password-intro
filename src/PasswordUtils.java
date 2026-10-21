@@ -57,4 +57,16 @@ public class PasswordUtils {
         return false;
     }
 
+    public static int countSpecialCharacters(String password) {
+        int count = 0;
+        
+        for (int i = 0; i < password.length() - 1; i++) {
+            char c = password.charAt(i);
+            if (!Character.isAlphabetic(c) && !Character.isDigit(c)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
 }

@@ -36,4 +36,29 @@ public class PasswordUtilsTest {
         boolean actual = PasswordUtils.containsTriple(password);
         assertEquals(true, actual);
     }
+    @Test
+    void testSpecialCharacterCount() {
+        String password = "passsword@@@"; 
+        int actual = PasswordUtils.countSpecialCharacters(password);
+        assertEquals(3, actual);
+    }
+
+    @Test
+    void testSpecialCharacterCountWithEmptyString() {
+        String password = "";
+        int actual = PasswordUtils.countSpecialCharacters(password);
+        assertEquals(0, password);
+    }
+    @Test
+    void testSpecialCharacterCountWithAllSpecialKey() {
+        String password = "!@%!@%";
+        int actual = PasswordUtils.countSpecialCharacters(password);
+        assertEquals(6, password);
+    }
+    @Test
+    void testSpecialCharacterCountWithSpace() {
+        String password = "   123123";
+        int actual = PasswordUtils.countSpecialCharacters(password);
+        assertEquals(3, password);
+    }
 }
